@@ -3,11 +3,15 @@ using namespace std;
 
 class Orc {
 public: 
-	int healt = 90;
+
+	int health = 90;
 	const int MAX_HEALTH = 100;
 	bool statusEffect = false;
+	string name = "unnamed";
+
 	void drinksPotion(int value);
 	void healthCheck();
+	Orc(string input);
 	
 };
 
@@ -30,11 +34,17 @@ void Orc::healthCheck() {
 
 }
 
+Orc::Orc(string input) {
+
+	name = input;
+
+}
+
 void main()
 {
 	
-	Orc orc1;
-	Orc orc2;
+	Orc orc1("Nathaniel");
+	Orc orc2("Ozymansias");
 	orc1.health = 60;
 	cout << "Orc 1's health: " << orc1.health 
 		<< "\nOrc 2's health: " << orc2.health 
@@ -47,12 +57,10 @@ void main()
 		<< "\nOrc 2's health: " << orc2.health
 		<< endl;
 
-	Orc orc3;
-	orc3.health = 40;
-	orc3.statusEffect = true;
-	orc3.drinksPotion(healthPotion);
-	cout << "Orc 3's health is: " << orc3.health;
+	Orc orc3("Barthemeww");
+	cout << orc3.name << endl;
 	
 }
+
 
 
